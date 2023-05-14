@@ -15,8 +15,62 @@ companyNames=[
     {img:"intellectyx",name:"INTELLECTYX",desc:"Intellectyx, Inc. is a Data Management Company, we help business to grow using Data and Digital Solutions. We provide solutions and services around Data Management, Data Engineering, Business Intelligence & Analytics, and Digital for various Enterprises, Governments, and Non-Profit organizations."},
     // {img:"tcs",name:"TCS",desc:"Hello World"},
 ];
+
+
+var container = document.getElementById("div2");
+  function duplicateCard() {
+    // Prompt the user for values
+    var cname = prompt("Enter the company name (in caps):");
+    var cardContent = prompt("Enter the content for the new card:");
+    var cardImage = prompt("Enter the image name for the new card:");
+    // Create a new card with the entered values
+
+    // alert("1");
+    
+    var newCard = {img:cardImage,name:cname,desc:cardContent};
+    companyNames.push(newCard);
+    // alert("3");
+    var cardHtml = createCardHtml(newCard);
+    container.innerHTML += cardHtml;
+
+    
+    
+
+  }
+
+
+
+
+  function createCardHtml(card) {
+  // Create the HTML for a card based on an object
+  var cardHtml = '<li>';
+
+
+  var cardHtml = '<li> <a href="Company.html?id=12" class="card">';
+  cardHtml += '<img src="assets/'+ card.img + '" class="card__image" alt="" />';
+  cardHtml += '<div class="card__overlay"> <div class="card__header"> <div class="card__header-text">';
+  cardHtml += '<h3 class="card__title">'+card.name+'</h3>';
+  cardHtml += '</div></div><p class="card__description">Eligibility Criteria<br>CGPA : > 7.5<br>NO. of standing arrears : < 5 <br>Department: cse, ece</p></div></a></li></div>';
+  
+//   cardHtml += '<a href="Company.html?id=12" class="card"></a>';
+//   cardHtml += '<img src="assets/'+ card.img + '" class="card__image" alt="" />';
+//   cardHtml += '<div class="card__overlay">';
+//   cardHtml += '<div class="card__header"></div>';
+//   cardHtml += '<div class="card__header-text"></div>';
+  
+//   cardHtml += '</div>';
+//   cardHtml += '</div>';
+//   cardHtml += '<p class="card__description">Eligibility Criteria<br>CGPA : > 7.5<br>  NO. of standing arrears : < 5 <br>Department: cse, ece</p>';
+//   cardHtml += '</div>';
+//   cardHtml += '</a>';
+//   cardHtml += ' </li>';
+//   // cardHtml += ' </div>';
+//   alert("2");
+  return cardHtml;
+}
+
 i=window.location.href.split("?id=")[1];
-    let temp=`
+let temp=`
 <div class="comp_card">
 <div class="comp_container">
     <div class="comp_logo">
@@ -25,8 +79,8 @@ i=window.location.href.split("?id=")[1];
     </div>
     <div class="comp_detail">
         <h2>${companyNames[i].name}</h2>
-        <h4><p>${companyNames[i].desc}</p>
-        </h4>
+        <p>${companyNames[i].desc}</p>
+        
     </div>
 </div>
 </div>`;
