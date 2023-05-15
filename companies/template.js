@@ -16,7 +16,42 @@ companyNames=[
     // {img:"tcs",name:"TCS",desc:"Hello World"},
 ];
 
+const size = companyNames.length;
+console.log(size);
 
+for (let i = 0; i < size; i++){
+  let temp=`
+  <li>
+  <a href="Company.html?id=${i}" class="card">
+    <img src="assets/${companyNames[i].img}.jpg" class="card__image" alt="" />
+    <div class="card__overlay">
+      <div class="card__header">
+        <!-- <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"> -->
+        <path />
+        </svg>
+        <!-- <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> -->
+        <div class="card__header-text">
+          <h3 class="card__title">${companyNames[i].name}</h3>
+          <!-- <span class="card__status">1 hour ago</span> -->
+        </div>
+      </div>
+      <p class="card__description">
+        Eligibility Criteria
+        <br>
+        CGPA : > 7.5
+        <br>
+        NO. of standing arrears : < 5 <br>
+          Department: cse, ece
+      </p>
+    </div>
+  </a>
+</li>
+      `;
+      let v=document.getElementById("div2");
+      let x= v.innerHTML;
+      v.innerHTML=x+temp;
+}
+  
 var container = document.getElementById("div2");
   function duplicateCard() {
     // Prompt the user for values
@@ -69,22 +104,6 @@ var container = document.getElementById("div2");
   return cardHtml;
 }
 
-i=window.location.href.split("?id=")[1];
-let temp=`
-<div class="comp_card">
-<div class="comp_container">
-    <div class="comp_logo">
-        <img src="assets/${companyNames[i].img}.jpg" alt="hello" width="250px" height="150px">
 
-    </div>
-    <div class="comp_detail">
-        <h2>${companyNames[i].name}</h2>
-        <p>${companyNames[i].desc}</p>
-        
-    </div>
-</div>
-</div>`;
-    let v=document.getElementById("template");
-    let x= v.innerHTML;
-    v.innerHTML=x+temp;
+
 
