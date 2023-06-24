@@ -1,0 +1,319 @@
+
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: black;
+ margin: 0;
+}
+.nav {
+  margin: 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #7e8c9c;
+  padding: 0.5%;
+  z-index: 2;
+}
+
+.nav .im {
+  float: left;
+  width: 40vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5%;
+}
+
+.nav .im img {
+  max-width: 80%;
+  height: auto;
+}
+
+.nav .li {
+  width: 50vw;
+  float: right;
+}
+
+.act {
+  background-color: teal;
+}
+
+.nact:hover {
+  background-color: teal;
+}
+
+.nav .li ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.nav .li ul li {
+  display: inline-block;
+  margin: 2%;
+  padding: 1%}
+
+.nav .li ul li a {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav .li ul li a {
+    font-size: 1.6vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav .li ul li a {
+    font-size: 1.8vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav .li ul li a {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .nav .li ul li a {
+    font-size: 2.1vw;
+  }
+} 
+
+
+
+    /* General styling */
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header styling */
+    header {
+      background-color: teal;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    
+    /* Main content styling */
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      background-color: black;
+    }
+    
+    /* Card styling */
+    .card {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      max-width: 400px;
+      padding: 20px;
+      width: 100%;
+    }
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .card p {
+      margin-bottom: 10px;
+    }
+    
+    /* Dropdown styling */
+    .dropdown {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .dropdown-content {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: none;
+      max-height: 300px;
+      overflow-y: scroll;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      /* z-index: -1; */
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      color: teal;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background-color: rgb(55, 165, 165);
+      color: white;
+    }
+    
+    /* Site card styling */
+    .site-card {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      max-width: 400px;
+      padding: 20px;
+      width: 100%;
+    }
+    .site-card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .site-card p {
+      margin-bottom: 10px;
+    }
+    .site-card a {
+      background-color: teal;
+      border-radius: 5px;
+      color: white !important;
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .site-card a:hover {
+      background-color: rgb(94, 238, 238);
+    }
+
+
+    .mb-4 a:hover{
+        background-color: teal;
+      }
+
+       .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      
+
+      
+      .card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: teal     ;
+        text-shadow: 1px 1px #000;
+      }
+      
+      .card .dropdown {
+        margin-bottom: 10px;
+        
+      }
+      
+      .card .dropdown span {
+        cursor: pointer;
+        display: block;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        color: #0a0e3f;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+        /* z-index:2; */
+      }
+      
+      .card .dropdown span:hover {
+        background-color:rgb(8, 81, 81);
+        color: #fff;
+      }
+      
+      .card .dropdown-content {
+        display: none;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        /* position: absolute; */
+        z-index:1;
+        top: 100%;
+        left: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .card .dropdown:hover .dropdown-content {
+        display: block;
+        transform: translateY(0);
+      }
+      
+      .site-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+.site-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.site-card img.site-card-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.site-card h3 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+}
+
+.site-card a {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+  text-decoration: none;
+}
+
+.site-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.site-card-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: black;
+}

@@ -1,0 +1,14 @@
+// {
+//     "name": "my-app",
+//     "version": "1.0.0",
+//     "description": "My Node.js app",
+//     "main": "student.js",
+//     "type": "module",
+//     "scripts": {
+//         "start": "node student.js"
+//     },
+//     "dependencies": {
+//         "express": "^4.18.2",
+//         "firebase": "^9.22.0"
+//     }
+// }

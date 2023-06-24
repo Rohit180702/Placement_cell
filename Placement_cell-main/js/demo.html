@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Image and Save URL to Realtime Database</title>
+  <!-- Add Firebase SDK -->
+</head>
+<body>
+
+<!-- Your HTML content -->
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { getDatabase, get, set, remove, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+import { getStorage, ref } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
+  // Your Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyDfjtCim0jTRtgIShY1WAtwt1BTWNXo9eM",
+  authDomain: "pcell-f6f1b.firebaseapp.com",
+  databaseURL: "https://pcell-f6f1b-default-rtdb.firebaseio.com",
+  projectId: "pcell-f6f1b",
+  storageBucket: "pcell-f6f1b.appspot.com",
+  messagingSenderId: "1003035349585",
+  appId: "1:1003035349585:web:26cbcea3b1b56a63b85e70",
+  measurementId: "G-0MSMZ4X244",
+  storageBucket: 'gs://pcell-f6f1b.appspot.com/'
+};
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Get a reference to the Firebase Storage bucket
+  const storageRef = getStorage(app);
+
+  // Upload the image file to the storage bucket
+  var file = 'gallery2.jpg'
+  var uploadTask = storageRef.child('images/' + file.name).put(file);
+
+  // Monitor the upload progress
+  uploadTask.on('state_changed', function(snapshot) {
+    // Handle progress
+  }, function(error) {
+    // Handle error
+  }, function() {
+    alert("updated");
+    // Get the download URL of the uploaded image
+    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      // Save the download URL to the Realtime Database
+      var databaseRef = firebase.database().ref('images');
+      databaseRef.push({ imageUrl: downloadURL });
+    });
+  });
+</script>
+
+</body>
+</html>
